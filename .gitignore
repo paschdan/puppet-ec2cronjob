@@ -7,4 +7,4 @@ spec/fixtures
 vendor
 junit
 log
-Gemflile.lock
+Gemfile.lock
