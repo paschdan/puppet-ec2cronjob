@@ -32,13 +32,12 @@ describe 'ec2cronjob class' do
     end
 
     describe file('/opt/ec2crons/mytest.sh') do
-       it { should be_file }
-       its(:content) { should match /Ec2CronJob: mytest/ }
-       its(:content) { should match /LOCAL_AMI=ami-1234567/ }
-       its(:content) { should match /LOCAL_IID=i-1234567/ }
-       its(:content) { should match /LOCAL_AZ=eu-test-1a/ }
-       its(:content) { should match /\s{2}\/bin\/false/ }
-
+      it { should be_file }
+      its(:content) { should match /Ec2CronJob: mytest/ }
+      its(:content) { should match /LOCAL_AMI=ami-1234567/ }
+      its(:content) { should match /LOCAL_IID=i-1234567/ }
+      its(:content) { should match /LOCAL_AZ=eu-test-1a/ }
+      its(:content) { should match /\s{2}\/bin\/false/ }
     end
   end
 end

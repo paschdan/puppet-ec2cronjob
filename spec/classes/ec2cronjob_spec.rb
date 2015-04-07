@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'ec2cronjob', :type => :class do
-  context "on a Debian OS" do
+  context 'on a Debian OS' do
     let :debian_facts do
       {
         :osfamily => 'Debian'
@@ -14,7 +14,7 @@ describe 'ec2cronjob', :type => :class do
     it { is_expected.to contain_file("/opt/ec2crons").with({
       :ensure => 'directory'
     })}
-    context "with aws credentials" do
+    context 'with aws credentials' do
       let :facts do
         {
           :concat_basedir => '/tmp/'
