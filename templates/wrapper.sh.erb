@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+#Ec2CronJob: <%=@title%>
+#
+LOCAL_AMI=<%=@ec2_ami_id%>
+LOCAL_IID=<%=@ec2_instance_id%>
+LOCAL_AZ=<%=@ec2_placement_availability_zone%>
+LOCAL_REGION="`echo \"$LOCAL_AZ\" | sed -e 's:\([0-9][0-9]*\)[a-z]*\$:\\1:'`"
+
+FIRST_IID=$(aws ec2 describe-instances --filters Name=instance-state-code,Values=16,Name=image-id,Values=$LOCAL_AMI --region $LOCAL_REGION --output text --query='Reservations[].Instances[0].InstanceId')
+
+if [ "$LOCAL_IID" == "$FIRST_IID" ]; then
+  <%=@command%>
+fi
+

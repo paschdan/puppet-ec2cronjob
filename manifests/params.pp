@@ -4,17 +4,6 @@
 # It sets variables according to platform.
 #
 class ec2cronjob::params {
-  case $::osfamily {
-    'Debian': {
-      $package_name = 'ec2cronjob'
-      $service_name = 'ec2cronjob'
-    }
-    'RedHat', 'Amazon': {
-      $package_name = 'ec2cronjob'
-      $service_name = 'ec2cronjob'
-    }
-    default: {
-      fail("${::operatingsystem} not supported")
-    }
-  }
+  $aws_access_key_id = undef
+  $aws_secret_access_key = undef
 }

@@ -1,5 +1,8 @@
 fixtures:
   repositories:
+    awscli: "https://github.com/asgoodasnu/puppet-awscli.git"
+      # from awscli
+    concat: "https://github.com/puppetlabs/puppetlabs-concat.git"
     stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
   symlinks:
     ec2cronjob: "#{source_dir}"

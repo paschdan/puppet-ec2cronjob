@@ -1,9 +1,9 @@
 {
   "name": "paschdan-ec2cronjob",
-  "version": "v0.1.0",
+  "version": "0.1.0",
   "author": "Daniel Paschke",
   "summary": "It Creates Cronjobs that runs in ec2 on only one instance per used AMI",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "http://github.com/asgoodasnu/puppet-ec2cronjob",
   "project_page": "https://github.com/asgoodasnu/puppet-ec2cronjob",
   "issues_url": "https://github.com/asgoodasnu/puppet-ec2cronjob/issues",

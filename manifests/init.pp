@@ -8,14 +8,12 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class ec2cronjob (
-  $package_name = $::ec2cronjob::params::package_name,
-  $service_name = $::ec2cronjob::params::service_name,
+  $aws_access_key_id     = $::ec2cronjob::params::aws_access_key_id,
+  $aws_secret_access_key = $::ec2cronjob::params::aws_secret_access_key,
 ) inherits ::ec2cronjob::params {
 
   # validate parameters here
 
   class { '::ec2cronjob::install': } ->
-  class { '::ec2cronjob::config': } ~>
-  class { '::ec2cronjob::service': } ->
   Class['::ec2cronjob']
 }
