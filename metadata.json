@@ -1,6 +1,6 @@
 {
   "name": "paschdan-ec2cronjob",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Daniel Paschke",
   "summary": "It Creates Cronjobs that runs in ec2 on only one instance per used AMI",
   "license": "Apache-2.0",
