@@ -1,3 +1,4 @@
+[![Puppet Forge](https://img.shields.io/puppetforge/v/paschdan/ec2cronjob.svg)](https://forge.puppetlabs.com/paschdan/ec2cronjob)
 [![Build Status](https://travis-ci.org/asgoodasnu/puppet-ec2cronjob.svg)](https://travis-ci.org/asgoodasnu/puppet-ec2cronjob)
 ## Overview
 
