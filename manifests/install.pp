@@ -5,7 +5,7 @@
 class ec2cronjob::install {
 
   # Install awscli
-  include "::awscli"
+  include '::awscli'
   # Install awscli profile when data is given
 
   file {'/opt/ec2crons':

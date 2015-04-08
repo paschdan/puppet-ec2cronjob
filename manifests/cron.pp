@@ -6,16 +6,17 @@
 #
 # [*ensure*]
 #   Either absent or present
-
+# [*command*]
+#  The Command to execute
 
 define ec2cronjob::cron(
   $ensure = 'present',
   $command = undef,
 ) {
 
- if $::ec2_instance_id == undef {
-   fail("not inside aws, cannot create")
- }
+  if $::ec2_instance_id == undef {
+    fail('not inside aws, cannot create')
+  }
 
   validate_re(
     $ensure,
@@ -24,21 +25,21 @@ define ec2cronjob::cron(
   )
 
   if $command == undef {
-    fail("no command specified, cannot create")
+    fail('no command specified, cannot create')
   }
 
   validate_string(
     $command,
-    "command appears not to be a string"
+    'command appears not to be a string'
   )
 
-  file { "/opt/ec2crons/$title.sh":
+  file { "/opt/ec2crons/${title}.sh":
     ensure  => 'present',
     content => template('ec2cronjob/wrapper.sh.erb')
   }
 
   cron { $title:
     ensure  => 'present',
-    command => "/opt/ec2crons/$title.sh"
+    command => "/opt/ec2crons/${title}.sh"
   }
 }
