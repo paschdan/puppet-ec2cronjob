@@ -8,7 +8,12 @@ describe 'ec2cronjob class' do
       pp = <<-EOS
       class { 'ec2cronjob': }
       ec2cronjob::cron { 'mytest':
-        command => '/bin/false'
+        command => '/bin/false',
+        hour => 1,
+        minute => 2,
+        month => 3,
+        monthday => 4,
+        weekday => 5
       }
       EOS
 
@@ -38,6 +43,10 @@ describe 'ec2cronjob class' do
       its(:content) { should match /LOCAL_IID=i-1234567/ }
       its(:content) { should match /LOCAL_AZ=eu-test-1a/ }
       its(:content) { should match /\s{2}\/bin\/false/ }
+    end
+
+    describe cron do
+      it { should have_entry '2 1 4 3 5 /opt/ec2crons/mytest.sh' }
     end
   end
 end

@@ -46,7 +46,7 @@ describe 'ec2cronjob::cron' do
       end
 
       context 'with correct params' do
-        let (:params) { { 
+        let (:params) { {
           'ensure' => 'present',
           'command' => '/bin/false'
         }}
@@ -65,6 +65,76 @@ describe 'ec2cronjob::cron' do
           is_expected.to contain_cron('test_job').with(
             'ensure' => 'present',
             'command' => '/opt/ec2crons/test_job.sh'
+          )
+        end
+      end
+      context 'with hour given' do
+        let (:params) { {
+          'ensure' => 'present',
+          'command' => '/bin/false',
+          'hour' => 3
+        } }
+        it 'should create a cron with hour set to 3' do
+          is_expected.to contain_cron('test_job').with(
+            'ensure' => 'present',
+            'command' => '/opt/ec2crons/test_job.sh',
+            'hour' => 3
+          )
+        end
+      end
+      context 'with minute given' do
+        let (:params) { {
+          'ensure' => 'present',
+          'command' => '/bin/false',
+          'minute' => 5
+        } }
+        it 'should create a cron with minute set to 5' do
+          is_expected.to contain_cron('test_job').with(
+            'ensure' => 'present',
+            'command' => '/opt/ec2crons/test_job.sh',
+            'minute' => 5
+          )
+        end
+      end
+      context 'with month given' do
+        let (:params) { {
+          'ensure' => 'present',
+          'command' => '/bin/false',
+          'month' => 7
+        } }
+        it 'should create a cron with month set to 7' do
+          is_expected.to contain_cron('test_job').with(
+            'ensure' => 'present',
+            'command' => '/opt/ec2crons/test_job.sh',
+            'month' => 7
+          )
+        end
+      end
+      context 'with monthday given' do
+        let (:params) { {
+          'ensure' => 'present',
+          'command' => '/bin/false',
+          'monthday' => 9
+        } }
+        it 'should create a cron with monthday set to 9' do
+          is_expected.to contain_cron('test_job').with(
+            'ensure' => 'present',
+            'command' => '/opt/ec2crons/test_job.sh',
+            'monthday' => 9
+          )
+        end
+      end
+      context 'with weekday given' do
+        let (:params) { {
+          'ensure' => 'present',
+          'command' => '/bin/false',
+          'weekday' => 5
+        } }
+        it 'should create a cron with monthday set to 9' do
+          is_expected.to contain_cron('test_job').with(
+            'ensure' => 'present',
+            'command' => '/opt/ec2crons/test_job.sh',
+            'weekday' => 5
           )
         end
       end

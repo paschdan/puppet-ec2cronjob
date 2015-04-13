@@ -10,8 +10,13 @@
 #  The Command to execute
 
 define ec2cronjob::cron(
-  $ensure = 'present',
-  $command = undef,
+  $ensure   = 'present',
+  $command  = undef,
+  $hour     = undef,
+  $minute   = undef,
+  $month    = undef,
+  $monthday = undef,
+  $weekday  = undef
 ) {
 
   if $::ec2_instance_id == undef {
@@ -39,7 +44,12 @@ define ec2cronjob::cron(
   }
 
   cron { $title:
-    ensure  => 'present',
-    command => "/opt/ec2crons/${title}.sh"
+    ensure   => 'present',
+    command  => "/opt/ec2crons/${title}.sh",
+    hour     => $hour,
+    minute   => $minute,
+    month    => $month,
+    monthday => $monthday,
+    weekday  => $weekday
   }
 }
