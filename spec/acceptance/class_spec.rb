@@ -6,7 +6,6 @@ describe 'ec2cronjob class' do
     # Using puppet_apply as a helper
     it 'should work idempotently with no errors' do
       pp = <<-EOS
-      class { 'ec2cronjob': }
       ec2cronjob::cron { 'mytest':
         command => '/bin/false',
         hour => 1,
