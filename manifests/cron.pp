@@ -19,6 +19,8 @@ define ec2cronjob::cron(
   $weekday  = undef
 ) {
 
+  include '::ec2cronjob'
+
   if $::ec2_instance_id == undef {
     fail('not inside aws, cannot create')
   }

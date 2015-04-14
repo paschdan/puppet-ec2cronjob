@@ -51,6 +51,11 @@ describe 'ec2cronjob::cron' do
           'command' => '/bin/false'
         }}
 
+        it 'should include ec2cronjob main class' do
+          is_expected.to contain_class('ec2cronjob')
+        end
+
+
         it 'should create the bash wrapper' do
           is_expected.to contain_file('/opt/ec2crons/test_job.sh').with({
             :ensure => 'present',
