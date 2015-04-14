@@ -16,6 +16,7 @@ group :development do
   gem "vagrant-wrapper"
   gem "puppet-blacksmith"
   gem "guard-rake"
+  gem "github_changelog_generator"
 end
 
 group :system_tests do
