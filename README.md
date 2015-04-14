@@ -8,3 +8,43 @@
 This module can generate CRON-JOBS that runs on only one EC2-Instance based on the used AMI.
 
 To be able to do this it installs the awscli tools.
+
+Until jdowning releases a newer version of his [awscli](https://forge.puppetlabs.com/jdowning/awscli)
+you need to use master branch !!!!
+
+### Usage
+
+
+#### Add a Cron
+
+if you are using awscli with my profles-fix you can use it this way:
+
+add an awscli profile for root user and prepare system for adding crons
+
+```
+class { 'ec2cronjob':
+  aws_access_key_id     => 'MYACCESSKEYID'
+  aws_secret_access_key => 'MYSECRETACCESSKEY'
+}
+```
+
+add a cron
+
+```
+ec2cronjob::cron { 'mytestcron':
+  command  => 'echo "Hello World"',
+  minute   => 1,
+  hour     => 2,
+  weekday  => 4,
+  month    => 5,
+  monthday => 7
+}
+```
+
+#### Remove a Cron
+
+```
+ec2cronjob::cron { 'mytestcron':
+  ensure => absent
+}
+```
