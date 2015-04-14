@@ -1,8 +1,8 @@
 # Change Log
 
-## [Unreleased](https://github.com/asgoodasnu/puppet-ec2cronjob/tree/HEAD)
+## [0.1.5](https://github.com/asgoodasnu/puppet-ec2cronjob/tree/0.1.5) (2015-04-14)
 
-[Full Changelog](https://github.com/asgoodasnu/puppet-ec2cronjob/compare/0.1.4...HEAD)
+[Full Changelog](https://github.com/asgoodasnu/puppet-ec2cronjob/compare/0.1.4...0.1.5)
 
 **Merged pull requests:**
 
@@ -11,6 +11,8 @@
 - adds baseclass with defaults to ec2cronjob::cron [\#6](https://github.com/asgoodasnu/puppet-ec2cronjob/pull/6) ([paschdan](https://github.com/paschdan))
 
 - adds changelog-generator [\#5](https://github.com/asgoodasnu/puppet-ec2cronjob/pull/5) ([paschdan](https://github.com/paschdan))
+
+- bumps version and changelog [\#8](https://github.com/asgoodasnu/puppet-ec2cronjob/pull/8) ([paschdan](https://github.com/paschdan))
 
 ## [0.1.4](https://github.com/asgoodasnu/puppet-ec2cronjob/tree/0.1.4) (2015-04-14)
 
