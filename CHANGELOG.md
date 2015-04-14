@@ -1,8 +1,8 @@
 # Change Log
 
-## [0.1.5](https://github.com/asgoodasnu/puppet-ec2cronjob/tree/HEAD)
+## [Unreleased](https://github.com/asgoodasnu/puppet-ec2cronjob/tree/HEAD)
 
-[Full Changelog](https://github.com/asgoodasnu/puppet-ec2cronjob/compare/0.1.4...0.1.5)
+[Full Changelog](https://github.com/asgoodasnu/puppet-ec2cronjob/compare/0.1.4...HEAD)
 
 **Merged pull requests:**
 
