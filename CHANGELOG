@@ -1,3 +1,0 @@
-2015-04-14 Release 0.1.4
-- adds times to cronjob definition
-- adds acceptance testing via wercker
