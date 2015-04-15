@@ -33,7 +33,6 @@ RSpec.configure do |c|
       if !host.check_for_command 'git'
         install_package host, 'git'
       end
-      on host, '[ -d "/etc/puppet/modules/awscli" ] || git clone git://github.com/asgoodasnu/puppet-awscli.git /etc/puppet/modules/awscli'
     end
     puppet_module_install(:source => proj_root, :module_name => 'ec2cronjob')
   end

@@ -1,6 +1,6 @@
 require 'spec_helper_acceptance'
 
-describe 'ec2cronjob class' do
+describe 'ec2cronjob class without awscli module' do
 
   context 'default parameters' do
     # Using puppet_apply as a helper
@@ -22,17 +22,12 @@ describe 'ec2cronjob class' do
         'FACTER_ec2_placement_availability_zone' => 'eu-test-1a'
       }
 
+      #remove awscli module if installed
+      shell '[ -d "/etc/puppet/modules/awscli" ] && rm -rf /etc/puppet/modules/awscli'
+
       # Run it twice and test for id should eq 0empotency
       apply_manifest(pp, :catch_failures => true, :environment => facts)
       apply_manifest(pp, :catch_changes  => true, :environment => facts)
-    end
-
-    describe command('pip --version') do
-      its(:exit_status) { should eq 0 }
-    end
-
-    describe command('aws --version') do
-      its(:exit_status) { should eq 0}
     end
 
     describe file('/opt/ec2crons/mytest.sh') do
