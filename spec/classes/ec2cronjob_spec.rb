@@ -10,7 +10,6 @@ describe 'ec2cronjob', :type => :class do
     let :facts do {}.merge debian_facts end
     it { is_expected.to contain_class("ec2cronjob::params") }
     it { is_expected.to contain_class("ec2cronjob::install") }
-    it { is_expected.to contain_class("awscli")}
     it { is_expected.to contain_file("/opt/ec2crons").with({
       :ensure => 'directory'
     })}
@@ -26,6 +25,7 @@ describe 'ec2cronjob', :type => :class do
           :aws_secret_access_key => 'MYAESSECRETACCESSKEY'
         }
       end
+      it { is_expected.to contain_class("awscli")}
       it { is_expected.to contain_awscli__profile("default").with(
         'aws_access_key_id' => 'MYAWSACCESSKEYID',
         'aws_secret_access_key' => 'MYAESSECRETACCESSKEY'
