@@ -17,7 +17,7 @@ you need to use master branch !!!!
 
 #### Add a Cron
 
-if you are using awscli with my profles-fix you can use it this way:
+if you are using awscli with my profiles-fix you can use it this way:
 
 add an awscli profile for root user and prepare system for adding crons
 
@@ -28,7 +28,7 @@ class { 'ec2cronjob':
 }
 ```
 
-add a cron
+to add a cron simply do
 
 ```
 ec2cronjob::cron { 'mytestcron':
@@ -40,6 +40,8 @@ ec2cronjob::cron { 'mytestcron':
   monthday => 7
 }
 ```
+
+you will need installed awscli (with credentials) to have the cronjob running.
 
 #### Remove a Cron
 
