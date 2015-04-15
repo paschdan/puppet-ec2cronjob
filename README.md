@@ -34,7 +34,7 @@ add an awscli profile for root user and prepare system for adding crons
 
 ```
 class { 'ec2cronjob':
-  aws_access_key_id     => 'MYACCESSKEYID'
+  aws_access_key_id     => 'MYACCESSKEYID',
   aws_secret_access_key => 'MYSECRETACCESSKEY'
 }
 ```
