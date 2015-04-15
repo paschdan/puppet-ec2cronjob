@@ -17,11 +17,11 @@ you need to use master branch !!!!
 This module installs a wrapper script around your cronjob.
 This wrapper does the following:
 
-* it gets the instance-id of the mashine via facter
-* it gets the ami-id of the mashine via facter
-* it gets the region of the mashine via facter / sed
+* it gets the instance-id of the current instance via facter
+* it gets the ami-id of the current instance via facter
+* it gets the region of the current instance via facter / sed
 * it gets the first instance with the current ami in the current region via awscli
-* it runs your cronjob if the first instance (from awscli) is the same as the current instance
+* it runs your cronjob if the first instance-id (from awscli) is the same as the current instance-id
 
 ### Usage
 
